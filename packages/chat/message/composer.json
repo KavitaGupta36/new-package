@@ -1,0 +1,13 @@
+{
+    "name": "chat/message",
+    "authors": [
+        {
+            "name": "kavita",
+            "email": "kavita.gupta@hestabit.in"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+    	"pusher/pusher-php-server": "^3.0"
+    }
+}
