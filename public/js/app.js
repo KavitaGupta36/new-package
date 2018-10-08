@@ -58307,11 +58307,7 @@ var render = function() {
             }
           },
           [
-            _c("div", { staticClass: "avatar" }, [
-              _c("img", {
-                attrs: { src: contact.profile_image, alt: contact.name }
-              })
-            ]),
+            _c("div", { staticClass: "avatar" }),
             _vm._v(" "),
             _c("div", { staticClass: "contact" }, [
               _c("p", { staticClass: "name" }, [_vm._v(_vm._s(contact.name))]),

@@ -7,8 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Chat\Message\Models\Message;
-
-use App\Events\MessageSent;
+use App\Events\NewMessage;
 use Pusher\Laravel\Facades\Pusher;
 
 class ChatController extends Controller
@@ -64,9 +63,8 @@ class ChatController extends Controller
             'text' => $request->text
         ]);
 
-        broadcast(new NewMessage($message));
-
         return response()->json($message);
+        broadcast(new NewMessage($message));
     }
 }
 
