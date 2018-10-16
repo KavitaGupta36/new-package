@@ -2,7 +2,8 @@
 
 namespace App\Events;
 
-use App\Message;
+//use App\Message;
+use Chat\Message\Models\Message;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;

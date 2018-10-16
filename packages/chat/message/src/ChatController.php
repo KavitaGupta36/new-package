@@ -17,7 +17,6 @@ class ChatController extends Controller
     {
         // get all users except the authenticated one
         $contacts = User::where('id', '!=', auth()->id())->get();
-
         // get a collection of items where sender_id is the user who sent us a message
         // and messages_count is the number of unread messages we have from him
         $unreadIds = Message::select(\DB::raw('`from` as sender_id, count(`from`) as messages_count'))
@@ -29,9 +28,7 @@ class ChatController extends Controller
         // add an unread key to each contact with the count of unread messages
         $contacts = $contacts->map(function($contact) use ($unreadIds) {
             $contactUnread = $unreadIds->where('sender_id', $contact->id)->first();
-
             $contact->unread = $contactUnread ? $contactUnread->messages_count : 0;
-
             return $contact;
         });
         return response()->json($contacts);
@@ -63,8 +60,8 @@ class ChatController extends Controller
             'text' => $request->text
         ]);
 
-        return response()->json($message);
         broadcast(new NewMessage($message));
+        return response()->json($message);
     }
 }
 
