@@ -3,9 +3,9 @@
 namespace Chat\Message\Models;
 
 use App\User;
-use Illuminate\Database\Eloquent\Model;
 use App\Http\Models\Model as MessageModel;
 
+use Illuminate\Database\Eloquent\Model;
 
 class Message extends Model
 {
@@ -16,3 +16,5 @@ class Message extends Model
         return $this->hasOne(User::class, 'id', 'from');
     }
 }
+
+

@@ -1,9 +1,30 @@
+<style type="text/css">
+    .message-input{
+        width:100%; 
+        margin-top:20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .message-input input{
+        width: 80%;
+        outline: none;
+        border:none;
+        padding: 0 10px;
+        height: 38px;
+    }
+    
+</style>
+
 <template>
     <div class="composer">
-        <textarea v-model="message" @keydown.enter="send" placeholder="Message..."></textarea>
+
+    <div class="message-input">
+        <input v-model="message" @keydown.enter="send" placeholder="Message..." />
+    </div>
+        
     </div>
 </template>
-
 <script>
     export default {
         data() {

@@ -2,7 +2,8 @@
 
 namespace App\Events;
 
-use App\Message;
+//use App\Message;
+use Chat\Message\Models\Message;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -16,8 +17,7 @@ class NewMessage implements ShouldBroadcast
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $message;
-    dump("package");
-    dump($message);
+
     /**
      * Create a new event instance.
      *

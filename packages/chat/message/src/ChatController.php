@@ -34,7 +34,7 @@ class ChatController extends Controller
             });
             return response()->json($contacts);   
         } catch (Exception $e) {
-            
+            dd($e);
         }
     }
 
